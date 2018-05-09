@@ -34,7 +34,7 @@
             ],
             "build-commands": [
                 "./bootstrap.sh --prefix=/app --with-libraries=filesystem,locale,iostreams,program_options,regex,random,thread",
-                "./b2 -j `nproc` install link=static variant=release --layout=system"
+                "./b2 -j $FLATPAK_BUILDER_N_JOBS install link=static variant=release --layout=system"
 ]
         },
 	{
@@ -59,7 +59,7 @@
                 "/share/applications/wesnoth_editor.desktop"
             ],
             "build-commands": [
-                "scons -j `nproc` prefix=/app ccache=true install wesnoth wesnothd"
+                "scons -j $FLATPAK_BUILDER_N_JOBS prefix=/app ccache=true install wesnoth wesnothd"
 	    ],
             "sources": [
                 {
