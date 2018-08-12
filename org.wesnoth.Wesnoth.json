@@ -34,7 +34,7 @@
             ],
             "build-commands": [
                 "./bootstrap.sh --prefix=/app --with-libraries=filesystem,locale,iostreams,program_options,regex,random,thread",
-                "./b2 -j $FLATPAK_BUILDER_N_JOBS install link=static variant=release --layout=system"
+                "./b2 -j $FLATPAK_BUILDER_N_JOBS install link=static variant=release cxxflags='-fPIE -fstack-protector-strong -D_FORTIFY_SOURCE=2' --layout=system"
 ]
         },
 	{
