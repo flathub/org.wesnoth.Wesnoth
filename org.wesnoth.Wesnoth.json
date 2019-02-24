@@ -64,8 +64,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.14/wesnoth-1.14.5/wesnoth-1.14.5.tar.bz2",
-		    "sha256": "05317594b1072b6cf9f955e3a7951a28096f8b1e3afed07825dd5a219c90f7cd"
+                    "url": "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.14/wesnoth-1.14.6/wesnoth-1.14.6.tar.bz2",
+		    "sha256": "45d2a05320e145b0b1bc9d16d68391945a98375c910a0ea7720e613bf867832b"
                 }
             ]
         }
