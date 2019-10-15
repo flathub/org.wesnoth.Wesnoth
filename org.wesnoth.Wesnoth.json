@@ -75,7 +75,11 @@
 		{
                     "type": "patch",
                     "path": "appdata_release.patch"
-		}
+                },
+                {
+                    "type": "patch",
+                    "path": "oars.patch"
+                }
             ]
         }
     ]
