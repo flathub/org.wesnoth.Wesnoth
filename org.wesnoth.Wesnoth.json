@@ -57,20 +57,13 @@
                 "python3 setup.py install --prefix=${FLATPAK_DEST} --optimize=1"
             ]
         },
-	"python3-requests.json",
         {
             "name": "wesnoth",
             "buildsystem": "simple",
-            "build-options": {
-              "build-args": [
-                "--share=network"
-              ]
-            },
             "cleanup": [
                 "/share/applications/wesnoth_editor.desktop"
             ],
             "build-commands": [
-                "python3 data/tools/update_appdata 1.14.9 packaging/wesnoth.appdata.xml",
                 "scons -j $FLATPAK_BUILDER_N_JOBS prefix=${FLATPAK_DEST} ccache=true install wesnoth wesnothd"
             ],
             "sources": [
@@ -78,10 +71,6 @@
                     "type": "archive",
                     "url": "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.14/wesnoth-1.14.9/wesnoth-1.14.9.tar.bz2",
                     "sha256": "ea8d51f474861c3954efdbfce3980e8c7ee58edeab714a8ab3d3f74e1dcd0dd6"
-                },
-                {
-                    "type": "patch",
-                    "path": "update_appdata.patch"
                 }
             ]
         }
