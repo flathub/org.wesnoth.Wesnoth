@@ -1,7 +1,7 @@
 {
     "app-id": "org.wesnoth.Wesnoth",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "18.08",
+    "runtime-version": "19.08",
     "sdk": "org.freedesktop.Sdk",
     "finish-args": [
         "--device=dri",
@@ -61,6 +61,7 @@
             "name": "wesnoth",
             "buildsystem": "simple",
             "cleanup": [
+                "/bin/python",
                 "/share/applications/wesnoth_editor.desktop"
             ],
             "build-commands": [
@@ -79,6 +80,12 @@
                 {
                     "type": "patch",
                     "path": "oars.patch"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "ln -sf /usr/bin/python3 /app/bin/python"
+                    ]
                 }
             ]
         }
