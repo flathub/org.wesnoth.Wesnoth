@@ -1,0 +1,7 @@
+diff --git a/data/dist b/data/dist
+new file mode 100644
+index 00000000000..438e67484aa
+--- /dev/null
++++ b/data/dist
+@@ -0,0 +1 @@
++Flatpak
