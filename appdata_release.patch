@@ -1,19 +1,19 @@
-diff --git a/packaging/wesnoth.appdata.xml b/packaging/wesnoth.appdata.xml
-index c73cb95810a..9ae2c3a94fd 100644
---- a/packaging/wesnoth.appdata.xml
-+++ b/packaging/wesnoth.appdata.xml
+diff --git a/packaging/org.wesnoth.Wesnoth.appdata.xml b/packaging/org.wesnoth.Wesnoth.appdata.xml
+index 7dbb80eb4ad..02dee92efdd 100644
+--- a/packaging/org.wesnoth.Wesnoth.appdata.xml
++++ b/packaging/org.wesnoth.Wesnoth.appdata.xml
 @@ -1,6 +1,4 @@
 -<?xml version="1.0" encoding="UTF-8"?>
 -<!-- Copyright 2017 The Battle for Wesnoth Project -->
 -<component type="desktop">
 +<?xml version="1.0" ?><!-- Copyright 2017 The Battle for Wesnoth Project --><component type="desktop">
-   <id>wesnoth.desktop</id>
-   <launchable type="desktop-id">wesnoth.desktop</launchable>
+   <id>org.wesnoth.Wesnoth.desktop</id>
+   <launchable type="desktop-id">org.wesnoth.Wesnoth.desktop</launchable>
    <metadata_license>GFDL-1.3</metadata_license>
-@@ -133,4 +131,4 @@
+@@ -130,4 +128,4 @@
    <translation type="gettext">wesnoth-trow</translation>
    <translation type="gettext">wesnoth-tsg</translation>
    <translation type="gettext">wesnoth-utbs</translation>
 -</component>
-+<releases><release version="1.14.17" date="2021-06-20T18:14:41Z"/></releases></component>
++<releases><release version="1.16.0" date="2021-10-24T00:27:29Z"/></releases></component>
 \ No newline at end of file
