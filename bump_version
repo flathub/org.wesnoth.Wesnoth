@@ -1,0 +1,11 @@
+#!/bin/sh -xe
+GIT_REPO=~/vcs-checkouts/wesnoth
+pushd $GIT_REPO
+VERSION=`git describe --tags`
+CHECKSUM=`sha256sum wesnoth-$VERSION.tar.bz2 | cut -f 1 -d' '`
+./utils/update_appdata $VERSION packaging/org.wesnoth.Wesnoth.appdata.xml
+git diff > appdata_release.patch
+popd
+cp $GIT_REPO/appdata_release.patch .
+UPDATED_MANIFEST=`cat org.wesnoth.Wesnoth.json | jq ".modules[2].sources[0].sha256 = \"$CHECKSUM\" | .modules[2].sources[0].url = \"https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.16/wesnoth-$VERSION/wesnoth-$VERSION.tar.bz2\""`
+cat <<< "$UPDATED_MANIFEST" > org.wesnoth.Wesnoth.json

@@ -1,91 +1,91 @@
 {
-    "app-id": "org.wesnoth.Wesnoth",
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "21.08",
-    "sdk": "org.freedesktop.Sdk",
-    "finish-args": [
-        "--device=dri",
-        "--share=ipc",
-        "--share=network",
-        "--socket=wayland",
-        "--socket=fallback-x11",
-        "--socket=pulseaudio",
-        "--require-version=0.10.2"
-    ],
-    "command": "wesnoth",
-    "rename-icon": "wesnoth-icon",
-    "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/share/aclocal",
-        "/share/man",
-        "*.la",
-        "*.a"
-    ],
-    "modules": [
+  "app-id": "org.wesnoth.Wesnoth",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "21.08",
+  "sdk": "org.freedesktop.Sdk",
+  "finish-args": [
+    "--device=dri",
+    "--share=ipc",
+    "--share=network",
+    "--socket=wayland",
+    "--socket=fallback-x11",
+    "--socket=pulseaudio",
+    "--require-version=0.10.2"
+  ],
+  "command": "wesnoth",
+  "rename-icon": "wesnoth-icon",
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/share/aclocal",
+    "/share/man",
+    "*.la",
+    "*.a"
+  ],
+  "modules": [
+    {
+      "name": "boost",
+      "buildsystem": "simple",
+      "sources": [
         {
-            "name": "boost",
-            "buildsystem": "simple",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://boostorg.jfrog.io/artifactory/main/release/1.69.0/source/boost_1_69_0.tar.bz2",
-                    "sha256": "8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406"
-                }
-            ],
-            "build-commands": [
-                "./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=filesystem,locale,iostreams,program_options,regex,random,thread,coroutine,context",
-                "./b2 -j $FLATPAK_BUILDER_N_JOBS install link=static variant=release cxxflags='-fPIE -fstack-protector-strong -D_FORTIFY_SOURCE=2' --layout=system"
-            ]
-        },
-        {
-            "name": "scons",
-            "buildsystem": "simple",
-            "cleanup": [
-                "*"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "http://downloads.sourceforge.net/scons/scons-3.0.4.tar.gz",
-                    "sha256": "e2b8b36e25492720a05c0f0a92a219b42d11ce0c51e3397a1e8296dfea1d9b1a"
-                }
-            ],
-            "build-commands": [
-                "python3 setup.py install --prefix=${FLATPAK_DEST} --optimize=1"
-            ]
-        },
-        {
-            "name": "wesnoth",
-            "buildsystem": "simple",
-            "cleanup": [
-                "/bin/python",
-                "/share/applications/wesnoth_editor.desktop"
-            ],
-            "build-commands": [
-                "scons -j $FLATPAK_BUILDER_N_JOBS prefix=${FLATPAK_DEST} ccache=true install wesnoth wesnothd"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.16/wesnoth-1.16.3/wesnoth-1.16.3.tar.bz2",
-                    "sha256": "0c2ac4fb16ccbb68e78749b603d299c3949901c0adf414bb8432e8e519e119a7"
-                },
-		{
-                    "type": "patch",
-                    "path": "appdata_release.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "data-dist.patch"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "ln -sf /usr/bin/python3 /app/bin/python"
-                    ]
-                }
-            ]
+          "type": "archive",
+          "url": "https://boostorg.jfrog.io/artifactory/main/release/1.69.0/source/boost_1_69_0.tar.bz2",
+          "sha256": "8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406"
         }
-    ]
+      ],
+      "build-commands": [
+        "./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=filesystem,locale,iostreams,program_options,regex,random,thread,coroutine,context",
+        "./b2 -j $FLATPAK_BUILDER_N_JOBS install link=static variant=release cxxflags='-fPIE -fstack-protector-strong -D_FORTIFY_SOURCE=2' --layout=system"
+      ]
+    },
+    {
+      "name": "scons",
+      "buildsystem": "simple",
+      "cleanup": [
+        "*"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "http://downloads.sourceforge.net/scons/scons-3.0.4.tar.gz",
+          "sha256": "e2b8b36e25492720a05c0f0a92a219b42d11ce0c51e3397a1e8296dfea1d9b1a"
+        }
+      ],
+      "build-commands": [
+        "python3 setup.py install --prefix=${FLATPAK_DEST} --optimize=1"
+      ]
+    },
+    {
+      "name": "wesnoth",
+      "buildsystem": "simple",
+      "cleanup": [
+        "/bin/python",
+        "/share/applications/wesnoth_editor.desktop"
+      ],
+      "build-commands": [
+        "scons -j $FLATPAK_BUILDER_N_JOBS prefix=${FLATPAK_DEST} ccache=true install wesnoth wesnothd"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.16/wesnoth-1.16.4/wesnoth-1.16.4.tar.bz2",
+          "sha256": "6b7fdc2e26b62c81870c3027556b969a3753e4e7a30eb166ad3933dc0f071c1e"
+        },
+        {
+          "type": "patch",
+          "path": "appdata_release.patch"
+        },
+        {
+          "type": "patch",
+          "path": "data-dist.patch"
+        },
+        {
+          "type": "shell",
+          "commands": [
+            "ln -sf /usr/bin/python3 /app/bin/python"
+          ]
+        }
+      ]
+    }
+  ]
 }
