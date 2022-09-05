@@ -1,5 +1,5 @@
 diff --git a/packaging/org.wesnoth.Wesnoth.appdata.xml b/packaging/org.wesnoth.Wesnoth.appdata.xml
-index 7dbb80eb4ad..e7419608eff 100644
+index 7dbb80eb4ad..e82090622ca 100644
 --- a/packaging/org.wesnoth.Wesnoth.appdata.xml
 +++ b/packaging/org.wesnoth.Wesnoth.appdata.xml
 @@ -1,6 +1,4 @@
@@ -15,5 +15,5 @@ index 7dbb80eb4ad..e7419608eff 100644
    <translation type="gettext">wesnoth-tsg</translation>
    <translation type="gettext">wesnoth-utbs</translation>
 -</component>
-+<releases><release version="1.16.5" date="2022-07-13T16:12:22Z"/></releases></component>
++<releases><release version="1.16.6" date="2022-09-05T00:28:59Z"/></releases></component>
 \ No newline at end of file
