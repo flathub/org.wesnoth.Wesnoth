@@ -1,7 +1,7 @@
 {
   "app-id": "org.wesnoth.Wesnoth",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "21.08",
+  "runtime-version": "22.08",
   "sdk": "org.freedesktop.Sdk",
   "finish-args": [
     "--device=dri",
@@ -29,12 +29,12 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://boostorg.jfrog.io/artifactory/main/release/1.69.0/source/boost_1_69_0.tar.bz2",
-          "sha256": "8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406"
+          "url": "https://boostorg.jfrog.io/artifactory/main/release/1.80.0/source/boost_1_80_0.tar.bz2",
+          "sha256": "1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9c500c0"
         }
       ],
       "build-commands": [
-        "./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=filesystem,locale,iostreams,program_options,regex,random,thread,coroutine,context",
+        "./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=filesystem,system,locale,iostreams,program_options,regex,random,thread,coroutine,context",
         "./b2 -j $FLATPAK_BUILDER_N_JOBS install link=static variant=release cxxflags='-fPIE -fstack-protector-strong -D_FORTIFY_SOURCE=2' --layout=system"
       ]
     },
