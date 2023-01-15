@@ -1,5 +1,5 @@
 #!/bin/sh -xe
-GIT_REPO=~/vcs-checkouts/wesnoth
+GIT_REPO=~/vcs-checkouts/wesnoth-1.16
 pushd $GIT_REPO
 VERSION=`git describe --tags`
 CHECKSUM=`sha256sum wesnoth-$VERSION.tar.bz2 | cut -f 1 -d' '`
