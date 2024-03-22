@@ -68,8 +68,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.16/wesnoth-1.16.11/wesnoth-1.16.11.tar.bz2",
-          "sha256": "5761867f0346d554e63958b9680ad268385218a5547141310877837d3a2882db"
+          "url": "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.16/wesnoth-1.16.12/wesnoth-1.16.12.tar.bz2",
+          "sha256": "1ebb0ec3f7d90ec1edf61710253a05ff5b04d7068a1d48d29b0e6318c946b966"
         },
         {
           "type": "patch",
