@@ -1,5 +1,5 @@
 #!/bin/sh -xe
-GIT_REPO=~/vcs-checkouts/wesnoth-1.16
+GIT_REPO=~/vcs-checkouts/wesnoth-1.18
 pushd $GIT_REPO
 VERSION=`git describe --tags`
 CHECKSUM=`sha256sum wesnoth-$VERSION.tar.bz2 | cut -f 1 -d' '`
@@ -7,4 +7,4 @@ CHECKSUM=`sha256sum wesnoth-$VERSION.tar.bz2 | cut -f 1 -d' '`
 git diff > appdata_release.patch
 popd
 cp $GIT_REPO/appdata_release.patch .
-jq --arg version "$VERSION" --arg checksum "$CHECKSUM" '.modules |= map(select(.name == "wesnoth").sources[0] |= . + {sha256: $checksum, url: "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.16/wesnoth-\($version)/wesnoth-\($version).tar.bz2"})' org.wesnoth.Wesnoth.json > org.wesnoth.Wesnoth.json.tmp && mv org.wesnoth.Wesnoth.json.tmp org.wesnoth.Wesnoth.json
+jq --arg version "$VERSION" --arg checksum "$CHECKSUM" '.modules |= map(select(.name == "wesnoth").sources[0] |= . + {sha256: $checksum, url: "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.18/wesnoth-\($version)/wesnoth-\($version).tar.bz2"})' org.wesnoth.Wesnoth.json > org.wesnoth.Wesnoth.json.tmp && mv org.wesnoth.Wesnoth.json.tmp org.wesnoth.Wesnoth.json
