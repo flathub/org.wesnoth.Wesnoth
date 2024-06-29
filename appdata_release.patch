@@ -1,16 +1,28 @@
 diff --git a/packaging/org.wesnoth.Wesnoth.appdata.xml b/packaging/org.wesnoth.Wesnoth.appdata.xml
-index 085fdfc3459..94202419838 100644
+index 085fdfc3459..898ff915900 100644
 --- a/packaging/org.wesnoth.Wesnoth.appdata.xml
 +++ b/packaging/org.wesnoth.Wesnoth.appdata.xml
-@@ -1,6 +1,4 @@
+@@ -1,10 +1,5 @@
 -<?xml version="1.0" encoding="UTF-8"?>
 -<!-- Copyright 2017 The Battle for Wesnoth Project -->
 -<component type="desktop">
 +<?xml version="1.0" ?><!-- Copyright 2017 The Battle for Wesnoth Project --><component type="desktop">
    <id>org.wesnoth.Wesnoth</id>
-   <provides>
+-  <provides>
+-    <id>org.wesnoth.Wesnoth.desktop</id>
+-  </provides>
+   <replaces>
      <id>org.wesnoth.Wesnoth.desktop</id>
-@@ -136,4 +134,4 @@
+   </replaces>
+@@ -111,6 +106,7 @@
+   <provides>
+     <binary>wesnoth</binary>
+     <binary>wesnothd</binary>
++    <id>org.wesnoth.Wesnoth.desktop</id>
+   </provides>
+   <translation type="gettext">wesnoth</translation>
+   <translation type="gettext">wesnoth-lib</translation>
+@@ -136,4 +132,4 @@
    <translation type="gettext">wesnoth-trow</translation>
    <translation type="gettext">wesnoth-tsg</translation>
    <translation type="gettext">wesnoth-utbs</translation>
