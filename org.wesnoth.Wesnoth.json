@@ -1,7 +1,7 @@
 {
   "app-id": "org.wesnoth.Wesnoth",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "23.08",
+  "runtime-version": "24.08",
   "sdk": "org.freedesktop.Sdk",
   "finish-args": [
     "--device=dri",
@@ -27,13 +27,14 @@
       "buildsystem": "simple",
       "sources": [
         {
-          "type": "archive",
-          "url": "https://boostorg.jfrog.io/artifactory/main/release/1.80.0/source/boost_1_80_0.tar.bz2",
-          "sha256": "1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9c500c0"
-        }
+          "type": "git",
+          "url": "https://github.com/boostorg/boost.git",
+          "tag": "boost-1.86.0",
+          "commit": "65c1319bb92fe7a9a4abd588eff5818d9c2bccf9"
+      }
       ],
       "build-commands": [
-        "./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=filesystem,system,locale,iostreams,program_options,regex,random,thread,coroutine,context,graph",
+        "./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=filesystem,system,locale,iostreams,program_options,regex,random,thread,coroutine,context,graph,charconv",
         "./b2 -j $FLATPAK_BUILDER_N_JOBS install link=static variant=release cxxflags='-fPIE -fstack-protector-strong -D_FORTIFY_SOURCE=2' --layout=system"
       ]
     },
@@ -45,13 +46,14 @@
       ],
       "sources": [
         {
-          "type": "archive",
-          "url": "http://downloads.sourceforge.net/scons/scons-3.0.4.tar.gz",
-          "sha256": "e2b8b36e25492720a05c0f0a92a219b42d11ce0c51e3397a1e8296dfea1d9b1a"
+          "type": "git",
+          "url": "https://github.com/SCons/scons",
+          "tag": "4.8.1",
+          "commit": "ff783e717edcd057df23f3d64d02961c64e5c898"
         }
       ],
       "build-commands": [
-        "python3 setup.py install --prefix=${FLATPAK_DEST} --optimize=1"
+        "pip3 install --no-index --no-build-isolation --prefix=/app ."
       ]
     },
     {
