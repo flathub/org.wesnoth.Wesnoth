@@ -44,15 +44,15 @@
       "cleanup": [
         "*"
       ],
-      "sources":[
-            {
-               "type":"file",
-               "url":"https://files.pythonhosted.org/packages/b8/a7/823091100c88d7d992c8c608d82a88ed59e227d13f8ccb33ea7a96d43d51/SCons-4.8.1-py3-none-any.whl",
-               "sha256":"a4c3b434330e2d7d975002fd6783284ba348bf394db94c8f83fdc5bf69cdb8d7"
-            }
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/b8/a7/823091100c88d7d992c8c608d82a88ed59e227d13f8ccb33ea7a96d43d51/SCons-4.8.1-py3-none-any.whl",
+          "sha256": "a4c3b434330e2d7d975002fd6783284ba348bf394db94c8f83fdc5bf69cdb8d7"
+        }
       ],
-      "build-commands":[
-            "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=\"${FLATPAK_DEST}\" \"scons\" --no-build-isolation"
+      "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=\"${FLATPAK_DEST}\" \"scons\" --no-build-isolation"
       ]
     },
     {
@@ -68,8 +68,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.18/wesnoth-1.18.4/wesnoth-1.18.4.tar.bz2",
-          "sha256": "2b95351729fcf1384d521d540aa0adfc80a9be2991aa4791f3b090678e4364ae"
+          "url": "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.18/wesnoth-1.18.5/wesnoth-1.18.5.tar.bz2",
+          "sha256": "e15db3caf446d91d389fc275f10c1a9e7ca3c6176c3b8ce94f5ee4a7a0c81bd6"
         },
         {
           "type": "patch",
