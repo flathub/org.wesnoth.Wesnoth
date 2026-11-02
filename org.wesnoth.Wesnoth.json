@@ -23,6 +23,8 @@
     "*.a"
   ],
   "modules": [
+    "shared-modules/SDL2/SDL2_image.json",
+    "shared-modules/SDL2/SDL_mixer.json",
     {
       "name": "boost",
       "buildsystem": "simple",
