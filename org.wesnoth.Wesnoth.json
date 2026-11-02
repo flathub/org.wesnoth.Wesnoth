@@ -1,7 +1,7 @@
 {
   "app-id": "org.wesnoth.Wesnoth",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "24.08",
+  "runtime-version": "26.08",
   "sdk": "org.freedesktop.Sdk",
   "finish-args": [
     "--device=dri",
@@ -29,8 +29,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://archives.boost.io/release/1.80.0/source/boost_1_80_0.tar.bz2",
-          "sha256": "1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9c500c0"
+          "url": "https://archives.boost.io/release/1.92.0/source/boost_1_92_0.tar.gz",
+          "sha256": "c4a3b310ddd2472416e091067166b0713be97c63f38c212c484ada022fd296ce"
         }
       ],
       "build-commands": [
@@ -47,8 +47,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/b8/a7/823091100c88d7d992c8c608d82a88ed59e227d13f8ccb33ea7a96d43d51/SCons-4.8.1-py3-none-any.whl",
-          "sha256": "a4c3b434330e2d7d975002fd6783284ba348bf394db94c8f83fdc5bf69cdb8d7"
+          "url": "https://files.pythonhosted.org/packages/8e/43/d6285848e893c19682c06e92679dc1a07d37ff7ea148747b1df681ec496c/scons-4.11.1-py3-none-any.whl",
+          "sha256": "454cef364348053422696e3d2ecb4fa593c96a624f955842eaaea64f95c8d11d"
         }
       ],
       "build-commands": [
